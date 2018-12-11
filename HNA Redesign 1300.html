@@ -1,0 +1,328 @@
+<html>
+
+<!--I got this line of code from
+https://stackoverflow.com/questions/26888751/chrome-device-mode-emulation-media-queries-not-working
+I was having trouble with inconsistencies using Chrome's device emulation, and this line allowed
+my media queries and responsive elements to trigger correctly. -->
+<meta name="viewport" content="width=device-width">
+
+<style>
+
+/*importing custom font*/
+@font-face {
+  font-family: Niramit;
+  src: url(Niramit-Regular.ttf);
+}
+
+body {
+  display: grid;
+  grid-template-rows: 5vw 25vw 25vw 32vw 25vw;
+  grid-template-columns: 20vw 20vw 20vw 20vw 20vw;
+  font-family: 'Niramit', sans-serif;
+  height: 100%;
+  background-color: #F8F8F8;
+}
+
+#navbar{
+  display: flex;
+  padding-left: 5%;
+}
+
+#navbar li{
+  display: inline;
+  list-style: none;
+  font-size: 1.2vw;
+  padding-right: 0.8%;
+  padding-left: 1.4%;
+  padding-top: 0.5%;
+}
+
+#logo {
+  width: 50%;
+  height: auto;
+  padding-top: 0.5%;
+}
+
+#topbar {
+  grid-row: 1;
+  grid-column: 1 / 6;
+  text-align: right;
+  background-color: white;
+
+}
+
+#hamburger {
+  display: none;
+}
+
+#banner {
+  text-align: left;
+  grid-row: 2;
+  grid-column: 1 / 6;
+  background-image: url("bannerphoto.jpg");
+  background-size: cover;
+}
+
+#btext {
+  margin-top: 5%;
+  font-size: 2.8vw;
+  padding-left: 3%;
+}
+
+#specialties {
+  background-color: skyblue;
+  grid-row: 3;
+  grid-column: 1 / 6;
+  padding-top: 0.25%;
+}
+
+#cta {
+  font-size: 2.5vw;
+  text-align: center;
+  color: white;
+}
+
+#cta_subtitle {
+  font-size: 1.2vw;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+#finddoc {
+  margin: 5%;
+  border: 0.15px #707070;
+  grid-row: 4;
+  grid-column: 1 / 3;
+  text-align: center;
+  font-size: 1.2vw;
+  height: auto;
+  background-color: white;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+#contact {
+  margin-top: 3.3%;
+  margin-bottom: 3.3%;
+  margin-right: 1.7%;
+  border: 0.15px #707070;
+  grid-row: 4;
+  grid-column: 3 / 6;
+  text-align: center;
+  font-size: 1.2vw;
+  height: auto;
+  background-color: white;
+}
+
+#icons {
+  display: grid;
+  grid-template-columns: 16vw 16vw 16vw 16vw 16vw;
+  grid-template-rows: 10vw 10vw;
+  font-size: 1.5vw;
+}
+
+#heartbeat {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+#dialysis {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+#research {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+#kidneydis {
+  grid-column: 5;
+  grid-row: 1;
+}
+
+.btn {
+  float: left;
+  position: relative;
+  color: white;
+  border-radius: 8px;
+  width: 15%;
+  font-family: 'Niramit', sans-serif;
+  text-align: center;
+  padding-top: 0.5%;
+  margin-left: 3%;
+  padding-bottom: 0.5%;
+  font-size: 1.12vw;
+  background-color: #0EC0D0;
+}
+
+.icon  {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-width: 40%;
+  height: auto;
+  width: auto;
+
+}
+
+.iconlabel {
+  font-size: 1.3vw;
+  text-align: center;
+  color: white;
+}
+
+.moduletitle {
+  font-size: 2.4vw;
+}
+
+#dropdown {
+  width: 40%;
+  height: auto;
+  font-size: 1.2vw;
+}
+
+#dropdowntext {
+  padding-left: 10%;
+}
+
+#doc_title {
+  color: #38BBFF;
+  text-align: center;
+}
+
+
+#contacttext {
+  width: 75%;
+  padding-left: 12%;
+}
+
+#doctorbutt{
+  float: none;
+  background-color: #38BBFF;
+  margin-bottom: 10%;
+  margin-right: 5%;
+  white-space: nowrap;
+  width: auto;
+}
+
+#contactbutt {
+  float: none;
+  background-color: #0EC6A2;
+  margin-top: 2%;
+  margin-bottom: 15%;
+  margin-right: 3%;
+  white-space: nowrap;
+  width: auto;
+}
+
+
+/* iPad screen */
+@media only screen and (max-width: 808px) {
+  #navbar {
+    display: none;
+  }
+  #hamburger {
+    display: block;
+    height: 2.5vw;
+    width: 2.5vw;
+    margin-right: 5%;
+    padding-top: 1%;
+  }
+
+}
+
+/* iPhone screen */
+@media only screen and (max-width: 600px) {
+
+  #navbar {
+    display: none;
+  }
+  #hamburger {
+    display: block;
+    height: 2.5vw;
+    width: 2.5vw;
+    margin-right: 5%;
+    padding-top: 1%;
+  }
+  #finddoc {
+    grid-row: 4;
+    grid-column: 1 / 6;
+  }
+
+  #contact {
+    grid-row: 5;
+    grid-column: 1 / 6;
+  }
+
+  #banner {
+    text-align: center;
+    background-image: url("sky-cloud.jpg");
+  }
+  .btn {
+    float: none;
+  }
+
+}
+</style>
+
+<title>Hypertension and Nephrology </title>
+<body>
+  <div id="topbar">
+    <img src="hna logo.png" id="logo" align="left">
+    <img src="hamburger.png" id="hamburger" align="right">
+    <ul id="navbar">
+      <li>Education</li>
+      <li>Meet Our Team</li>
+      <li>Our Specialties</li>
+      <li>Patient Portal </li>
+
+      <li>Hours/Locations</li>
+    </ul>
+  </div>
+
+  <div id="banner">
+    <div id="maintxt" background="blue">
+    <h2 id="btext">For your own personal care.</h2>
+    <button type="button" class="btn sched">Schedule an Appointment</button>
+    <button type="button" class="btn ins">Insurance Portal</button>
+    </div>
+  </div>
+
+  <div id="specialties">
+    <h2 id="cta">Come get started with us today.</h2>
+    <p id="cta_subtitle">At Hypertension and Nephrology, we believe in providing compassionate,
+      state-of-the-art kidney disease care for all of our patients. </p>
+    <div id="icons">
+      <div id="heartbeat"><img src="heartbeat.png" id="hypertension" class="icon">
+      <p class="iconlabel">Hypertension</p></div>
+      <div id="dialysis"><img src="dialysis.png" id="dialysis" class="icon">
+      <p class="iconlabel">Dialysis</p></div>
+      <div id="research"><img src="analysis.png" id="analysis" class="icon">
+      <p class="iconlabel">Clinical Research</p></div>
+      <div id="kidneydis"><img src="kidneys.png" id="kidneys" class="icon">
+      <p class="iconlabel">Kidney Disease</p></div>
+  </div>
+</div>
+  <div id="finddoc">
+    <h2 class="moduletitle" id="doc_title"> Find a Doctor </h2>
+    <p>Hypertension and Nephrology works with nearly 100 doctors whose goal is to make you feel well.
+      Let us help you connect with a doctor today. </p>
+    <p id="dropdowntext"> I would like to find...
+    <select id="dropdown">
+      <option value="kidneydoc">a kidney doctor.</option>
+      <option value="heartdoc">a cardiologist.</option>
+      <option value="dialysisdoc">a dialysis technician.</option>
+    </select>
+    </p>
+    <button type="button" class="btn" id="doctorbutt">Meet Your Doctor</button>
+  </div>
+
+  <div id="contact">
+    <h2 class="moduletitle" id="contact_title"> Need some help? Contact us!</h2>
+    <p id="contacttext">Hypertension and Nephrology serves Monmouth, Middlesex, and Ocean counties,
+      covering a geographical area of nearly 2 million people. Stop by or send us an email today! </p>
+    <button type="button" class="btn" id="contactbutt">Find a Location</button>
+  </div>
+</body>
+</html>
